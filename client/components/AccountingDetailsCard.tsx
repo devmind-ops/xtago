@@ -11,20 +11,55 @@ interface AccountingDetailsCardProps {
   position?: { x: number; y: number } | null;
 }
 
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
+
 export function AccountingDetailsCard({ isOpen, onClose, data, inline = true, position }: AccountingDetailsCardProps) {
+  // Hooks must be declared unconditionally
+  const cardRef = useRef<HTMLDivElement>(null);
+  const [coords, setCoords] = useState<{ left: number; top: number } | null>(null);
+
+  useLayoutEffect(() => {
+    const compute = () => {
+      const PADDING = 8;
+      const vw = window.innerWidth;
+      const vh = window.innerHeight;
+      const menuCenterX = (position?.x ?? vw / 2) + 60; // action menu ~120px wide
+      const anchorY = position?.y ?? 200;
+      const cardW = cardRef.current?.offsetWidth ?? 246;
+      const cardH = cardRef.current?.offsetHeight ?? 280;
+
+      const desiredLeft = menuCenterX - cardW / 2;
+      const left = Math.min(Math.max(PADDING, desiredLeft), vw - cardW - PADDING);
+
+      const below = anchorY + 8;
+      const above = anchorY - cardH - 8;
+      const top = below + cardH + PADDING > vh ? Math.max(PADDING, above) : Math.min(below, vh - cardH - PADDING);
+
+      setCoords({ left, top });
+    };
+
+    compute();
+    window.addEventListener("resize", compute);
+    window.addEventListener("orientationchange", compute);
+    return () => {
+      window.removeEventListener("resize", compute);
+      window.removeEventListener("orientationchange", compute);
+    };
+  }, [position?.x, position?.y]);
+
   if (!isOpen) return null;
 
   return (
     <>
       {/* Backdrop */}
-      <div 
-        className="fixed inset-0 z-40 bg-black/50" 
+      <div
+        className="fixed inset-0 z-40 bg-black/50"
         onClick={onClose}
       />
-      
+
       {/* Card */}
-      <div className={`${inline ? 'fixed' : 'fixed'} z-50`} style={inline && position ? { left: Math.min(Math.max(8, position.x - 120), window.innerWidth - 246 - 8), top: Math.min(position.y + 8, window.innerHeight - 200) } : { left: 16, top: 200 }}>
-        <div className="inline-flex p-6 flex-col justify-center items-start gap-3 rounded-xl bg-[#1C242E] shadow-[0_0_88px_rgba(0,0,0,0.25)] w-[246px]">
+      <div className={`${inline ? 'fixed' : 'fixed'} z-50`} style={coords ?? { left: 16, top: 200 }}>
+        <div ref={cardRef} className="inline-flex p-6 flex-col justify-center items-start gap-3 rounded-xl bg-[#1C242E] shadow-[0_0_88px_rgba(0,0,0,0.25)] w-[246px] max-w-[calc(100vw-16px)] max-h-[70vh] overflow-auto">
           {/* Triangle pointer */}
           <div className="absolute -top-3 right-4">
             <svg width="32" height="28" viewBox="0 0 32 28" fill="none" xmlns="http://www.w3.org/2000/svg">

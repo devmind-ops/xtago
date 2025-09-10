@@ -73,13 +73,19 @@ export function InteractiveDataTable({ entries, onEdit, onView, onDelete }: Inte
   const handleActionClick = (event: React.MouseEvent, entryId: number) => {
     event.stopPropagation();
     const rect = event.currentTarget.getBoundingClientRect();
-    const MENU_WIDTH = 90;
+    const MENU_WIDTH = 120;
     const PADDING = 8;
+    const desiredLeft = rect.left + rect.width / 2 - MENU_WIDTH / 2;
     const x = Math.min(
-      Math.max(PADDING, rect.left),
+      Math.max(PADDING, desiredLeft),
       window.innerWidth - MENU_WIDTH - PADDING
     );
-    const y = Math.min(rect.bottom + 8, window.innerHeight - 48);
+    const MENU_HEIGHT = 40;
+    const below = rect.bottom + 8;
+    const above = rect.top - MENU_HEIGHT - 8;
+    const y = below + MENU_HEIGHT + PADDING > window.innerHeight
+      ? Math.max(PADDING, above)
+      : Math.min(below, window.innerHeight - MENU_HEIGHT - PADDING);
     setActiveActionMenu({
       entryId,
       position: { x, y }
