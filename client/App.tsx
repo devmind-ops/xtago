@@ -7,6 +7,8 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
+import Dashboard from "./pages/Dashboard";
+import Accounting from "./pages/Accounting";
 import NotFound from "./pages/NotFound";
 import ForgotPassword from "./pages/ForgotPassword";
 import CheckEmail from "./pages/CheckEmail";
@@ -25,7 +27,12 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<SignIn />} />
+          <Route path="/" element={<Dashboard />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/accounting" element={<Accounting />} />
+          <Route path="/products" element={<Dashboard />} />
+          <Route path="/info" element={<Dashboard />} />
+          <Route path="/refunds" element={<Dashboard />} />
           <Route path="/sign-in" element={<SignIn />} />
           <Route path="/create-account" element={<CreateAccount />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
