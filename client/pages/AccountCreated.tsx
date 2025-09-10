@@ -1,74 +1,45 @@
-import { AuthCard, AuthCardHeader } from "@/components/AuthCard";
+import { XtagoLogo } from "@/components/XtagoLogo";
 
-// Success illustration component (simplified version)
-function SuccessIllustration() {
+export default function AccountCreated() {
   return (
-    <div className="flex items-center justify-center w-[217px] h-[203px] mx-auto">
-      <div className="relative">
-        {/* Grid background */}
-        <div className="absolute inset-0 opacity-20">
-          <svg width="217" height="203" viewBox="0 0 217 203" fill="none" xmlns="http://www.w3.org/2000/svg">
-            {/* Grid lines */}
-            <defs>
-              <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
-                <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#22353E" strokeWidth="1"/>
-              </pattern>
-            </defs>
-            <rect width="217" height="203" fill="url(#grid)" />
-          </svg>
-        </div>
-        
-        {/* Floating dots */}
-        <div className="absolute top-12 left-8 w-3 h-3 bg-white rounded-full opacity-60"></div>
-        <div className="absolute top-20 right-12 w-2 h-2 bg-white rounded-full opacity-40"></div>
-        <div className="absolute bottom-20 left-4 w-2 h-2 bg-white rounded-full opacity-50"></div>
-        <div className="absolute bottom-12 right-8 w-3 h-3 bg-white rounded-full opacity-60"></div>
-        
-        {/* Main circle with checkmark */}
-        <div className="relative flex items-center justify-center">
-          {/* Outer gray circle */}
-          <div className="w-32 h-32 bg-gray-300 rounded-full flex items-center justify-center">
-            {/* Dark inner shape */}
-            <div className="w-24 h-20 bg-gray-800 rounded-t-full flex items-center justify-center relative">
-              {/* Green circle with checkmark */}
-              <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center absolute -bottom-8">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path 
-                    d="M9 12l2 2 4-4" 
-                    stroke="white" 
-                    strokeWidth="2" 
-                    strokeLinecap="round" 
-                    strokeLinejoin="round"
-                  />
-                </svg>
+    <div className="min-h-screen bg-[#151D26] flex justify-center items-center px-4 py-[50px]">
+      <div className="w-full max-w-[429px] h-[866px] flex justify-center items-center">
+        {/* Main Card Container with Gradient */}
+        <div 
+          className="w-[397px] h-[604px] p-3 flex flex-col justify-center items-center gap-3 rounded-xl"
+          style={{
+            background: "linear-gradient(108deg, rgba(0, 166, 255, 0.30) -30.64%, rgba(0, 166, 255, 0.00) 104.17%)"
+          }}
+        >
+          {/* Logo at top (click to go Dashboard) */}
+          <XtagoLogo />
+          
+          {/* Content Container */}
+          <div className="flex flex-col justify-center items-center gap-[30px] w-[364px]">
+            <div className="flex flex-col items-center gap-[50px] w-[191px]">
+              {/* Success Illustration */}
+              <img 
+                src="https://api.builder.io/api/v1/image/assets/TEMP/824342b9c69eab323b2d86edc29fa699f5934db5?width=434" 
+                alt="Account Created Success"
+                className="w-[217px] h-[203px]"
+              />
+              
+              {/* Text Content */}
+              <div className="flex flex-col justify-center items-center gap-[15px] self-stretch">
+                {/* Title */}
+                <h1 className="self-stretch text-[#F6F6F6] text-center text-[20px] font-bold leading-normal">
+                  Account Created Successfully
+                </h1>
+                
+                {/* Description */}
+                <p className="w-[325px] text-[#F6F6F6] text-center text-[16px] font-normal leading-normal">
+                  Congratulations! You have successfully created your account
+                </p>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  );
-}
-
-export default function AccountCreated() {
-  const handleContinue = () => {
-    // In a real app, this would navigate to the dashboard or login
-    alert("Success! This would typically navigate to the dashboard or login page.");
-  };
-
-  return (
-    <AuthCard>
-      <div className="space-y-8 text-center">
-        {/* Success Illustration */}
-        <SuccessIllustration />
-        
-        {/* Header */}
-        <AuthCardHeader
-          title="Account Created Successfully"
-          description="Congratulations! You have successfully created your account"
-        />
-        
-      </div>
-    </AuthCard>
   );
 }
