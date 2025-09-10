@@ -1,119 +1,57 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { cn } from "@/lib/utils";
 
+// Icons closely matching the Figma footer
 function CostsIcon({ active }: { active?: boolean }) {
+  const color = active ? "#F59E0B" : "currentColor";
   return (
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path
-        d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9V7L15 1L13.5 2.5L16.17 5.17C15.24 5.06 14.32 5 13.38 5H10.63C6.22 5 2.75 7.58 2.75 10.75C2.75 11.95 3.92 13 5.37 13H8.63C10.1 13 11.25 11.95 11.25 10.75C11.25 9.55 10.1 8.5 8.63 8.5H5.37C4.92 8.5 4.5 8.73 4.21 9.1"
-        stroke={active ? "#F59E0B" : "currentColor"}
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
+      <circle cx="12" cy="12" r="9" stroke={color} strokeWidth="1.5" />
+      <path d="M13.8 7.75C13.33 7.27 12.7 7 12 7C10.62 7 9.5 8.12 9.5 9.5C9.5 10.88 10.62 12 12 12C13.38 12 14.5 13.12 14.5 14.5C14.5 15.88 13.38 17 12 17C11.3 17 10.67 16.73 10.2 16.25" stroke={color} strokeWidth="1.5" strokeLinecap="round"/>
+      <path d="M12 5V7M12 17V19" stroke={color} strokeWidth="1.5" strokeLinecap="round"/>
     </svg>
   );
 }
 
 function ProductsIcon({ active }: { active?: boolean }) {
+  const color = active ? "#F59E0B" : "currentColor";
   return (
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path
-        d="M20 7L12 3L4 7L12 11L20 7Z"
-        stroke={active ? "#F59E0B" : "currentColor"}
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M4 12L12 16L20 12"
-        stroke={active ? "#F59E0B" : "currentColor"}
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M4 17L12 21L20 17"
-        stroke={active ? "#F59E0B" : "currentColor"}
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
+      <path d="M6 7H18L17 19H7L6 7Z" stroke={color} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M9 7V6C9 4.343 10.343 3 12 3C13.657 3 15 4.343 15 6V7" stroke={color} strokeWidth="1.5" strokeLinecap="round"/>
+      <path d="M9 11H15" stroke={color} strokeWidth="1.5" strokeLinecap="round"/>
     </svg>
   );
 }
 
 function InfoIcon({ active }: { active?: boolean }) {
+  const color = active ? "#F59E0B" : "currentColor";
   return (
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle
-        cx="12"
-        cy="12"
-        r="10"
-        stroke={active ? "#F59E0B" : "currentColor"}
-        strokeWidth="1.5"
-      />
-      <path
-        d="M12 16V12"
-        stroke={active ? "#F59E0B" : "currentColor"}
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M12 8H12.01"
-        stroke={active ? "#F59E0B" : "currentColor"}
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
+      <circle cx="12" cy="12" r="9" stroke={color} strokeWidth="1.5" />
+      <path d="M12 16V11" stroke={color} strokeWidth="1.5" strokeLinecap="round"/>
+      <circle cx="12" cy="8" r="1" fill={color} />
     </svg>
   );
 }
 
 function RefundsIcon({ active }: { active?: boolean }) {
+  const color = active ? "#F59E0B" : "currentColor";
   return (
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path
-        d="M9 12L11 14L15 10"
-        stroke={active ? "#F59E0B" : "currentColor"}
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
-        stroke={active ? "#F59E0B" : "currentColor"}
-        strokeWidth="1.5"
-      />
+      <path d="M12 5C8.686 5 6 7.686 6 11C6 14.314 8.686 17 12 17C13.657 17 15.157 16.328 16.242 15.242" stroke={color} strokeWidth="1.5" strokeLinecap="round"/>
+      <path d="M16 11H20V15" stroke={color} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M20 11C20 7.686 17.314 5 14 5" stroke={color} strokeWidth="1.5" strokeLinecap="round"/>
     </svg>
   );
 }
 
-function MicrophoneIcon() {
+function ChartFabIcon() {
+  // Matches attached frame: rounded square with bars inside
   return (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path
-        d="M12 14C13.1046 14 14 13.1046 14 12V6C14 4.89543 13.1046 4 12 4C10.8954 4 10 4.89543 10 6V12C10 13.1046 10.8954 14 12 14Z"
-        stroke="#01A9EA"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M8 12C8 14.2091 9.79086 16 12 16C14.2091 16 16 14.2091 16 12"
-        stroke="#01A9EA"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M12 16V20M10 20H14"
-        stroke="#01A9EA"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+      <path d="M3 3V21H21V3H3ZM5 5H19V19H5V5ZM7 17V15H9V17H7ZM7 13V11H9V13H7ZM7 9V7H9V9H7ZM11 17V13H13V17H11ZM11 11V9H13V11H11ZM15 17V15H17V17H15ZM15 13V7H17V13H15Z" fill="white"/>
     </svg>
   );
 }
@@ -123,12 +61,34 @@ interface BottomNavigationProps {
   onTabChange?: (tab: string) => void;
 }
 
-export function BottomNavigation({ activeTab = "Products", onTabChange }: BottomNavigationProps) {
+export function BottomNavigation({ activeTab = "Dashboard", onTabChange }: BottomNavigationProps) {
   const [active, setActive] = useState(activeTab);
+  const navigate = useNavigate();
 
   const handleTabClick = (tab: string) => {
     setActive(tab);
     onTabChange?.(tab);
+    
+    // Navigate to appropriate routes
+    switch (tab) {
+      case "Costs":
+        navigate("/accounting");
+        break;
+      case "Products":
+        navigate("/products");
+        break;
+      case "Info":
+        navigate("/info");
+        break;
+      case "Refunds":
+        navigate("/refunds");
+        break;
+      case "Dashboard":
+        navigate("/dashboard");
+        break;
+      default:
+        break;
+    }
   };
 
   const tabs = [
@@ -139,36 +99,38 @@ export function BottomNavigation({ activeTab = "Products", onTabChange }: Bottom
   ];
 
   return (
-    <div className="relative">
+    <div className="relative pb-[calc(env(safe-area-inset-bottom))]">
       {/* Main Navigation */}
-      <div className="flex items-center justify-around bg-xtago-background border-t border-xtago-surface px-4 py-3">
-        {tabs.map((tab) => {
-          const IconComponent = tab.icon;
-          const isActive = active === tab.id;
-          
-          return (
-            <button
-              key={tab.id}
-              onClick={() => handleTabClick(tab.id)}
-              className={cn(
-                "flex flex-col items-center gap-1 px-3 py-2 transition-colors",
-                isActive ? "text-orange-500" : "text-xtago-muted hover:text-xtago-text"
-              )}
-            >
-              <IconComponent active={isActive} />
-              <span className="text-xs font-medium">{tab.label}</span>
-            </button>
-          );
-        })}
-      </div>
+      <div className="relative overflow-visible">
+        <div className="flex items-center justify-around bg-[#0F1822]/98 backdrop-blur border-t border-xtago-surface/50 px-4 py-3 rounded-t-2xl shadow-[0_-8px_25px_rgba(0,0,0,0.4)]">
+          {tabs.map((tab, idx) => {
+            const IconComponent = tab.icon;
+            const isActive = active === tab.id;
+            return (
+              <button
+                key={tab.id}
+                onClick={() => handleTabClick(tab.id)}
+                className={cn(
+                  "flex flex-col items-center gap-1 px-3 py-2 transition-colors",
+                  isActive ? "text-orange-500" : "text-xtago-muted hover:text-xtago-text"
+                )}
+              >
+                <IconComponent active={isActive} />
+                <span className="text-xs font-medium">{tab.label}</span>
+              </button>
+            );
+          })}
+        </div>
 
-      {/* Floating Action Button */}
-      <button
-        className="absolute -top-6 right-6 h-12 w-12 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 border-2 border-cyan-400 shadow-lg flex items-center justify-center hover:shadow-xl transition-all"
-        onClick={() => alert("Voice assistant activated")}
-      >
-        <MicrophoneIcon />
-      </button>
+        {/* Center FAB */}
+        <button
+          aria-label="Dashboard"
+          className="absolute left-1/2 -top-7 -translate-x-1/2 h-[64px] w-[64px] rounded-full bg-gradient-to-b from-[#FFB24A] to-[#FE8A00] shadow-[0_12px_32px_rgba(0,0,0,0.5),0_0_0_4px_rgba(0,0,0,0.15)_inset] flex items-center justify-center hover:scale-105 transition-transform duration-200"
+          onClick={() => handleTabClick("Dashboard")}
+        >
+          <ChartFabIcon />
+        </button>
+      </div>
     </div>
   );
 }

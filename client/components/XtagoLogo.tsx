@@ -1,16 +1,45 @@
+import { Link } from "react-router-dom";
+
 interface XtagoLogoProps {
   className?: string;
+  width?: number;
+  height?: number;
+  alt?: string;
+  to?: string;
+  clickable?: boolean;
 }
 
-export function XtagoLogo({ className = "" }: XtagoLogoProps) {
+export function XtagoLogo({
+  className = "",
+  width = 115,
+  height = 58,
+  alt = "Xtago",
+  to = "/dashboard",
+  clickable = true,
+}: XtagoLogoProps) {
+  const img = (
+    <img
+      src="/assets/logo.webp"
+      alt={alt}
+      width={width}
+      height={height}
+      className="block h-auto w-auto"
+    />
+  );
+
   return (
     <div className={`flex items-center justify-center ${className}`}>
-      <h1 className="text-4xl font-bold text-xtago-text">
-        <span className="bg-gradient-to-r from-purple-400 via-blue-500 to-purple-600 bg-clip-text text-transparent">
-          X
-        </span>
-        tago
-      </h1>
+      {clickable ? (
+        <Link
+          to={to}
+          aria-label="Go to Dashboard"
+          className="inline-block focus:outline-none focus:ring-2 focus:ring-[#FE8A00] rounded cursor-pointer"
+        >
+          {img}
+        </Link>
+      ) : (
+        img
+      )}
     </div>
   );
 }

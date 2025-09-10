@@ -2,8 +2,8 @@ import { useState } from "react";
 
 function AIIcon() {
   return (
-    <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-blue-500/20">
-      <span className="text-sm font-bold text-blue-400">AI</span>
+    <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-orange-500/20">
+      <span className="text-sm font-bold text-orange-500">AI</span>
     </div>
   );
 }
@@ -63,7 +63,7 @@ export function AISearchBar() {
 
   return (
     <form onSubmit={handleSubmit} className="w-full">
-      <div className="flex items-center gap-3 rounded-2xl bg-gradient-to-r from-blue-600/20 to-blue-500/10 border border-blue-500/30 px-4 py-3">
+      <div className="flex items-center gap-3 rounded-2xl bg-gradient-to-r from-orange-600/20 to-orange-500/10 border border-orange-500/30 px-4 py-3 shadow-sm">
         <AIIcon />
         
         <input
@@ -71,7 +71,7 @@ export function AISearchBar() {
           placeholder="Ask me anything"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          className="flex-1 bg-transparent text-xtago-text placeholder:text-xtago-muted outline-none text-base"
+          className="flex-1 bg-transparent text-xtago-text placeholder:text-xtago-muted outline-none text-base font-medium"
         />
         
         <div className="flex items-center gap-2">
