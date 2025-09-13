@@ -1,0 +1,97 @@
+import { ExBatchTimeRangeSelector } from "@/components/ExBatchTimeRangeSelector";
+import { ExBatchTable } from "@/components/ExBatchTable";
+
+export function ExBatchContent() {
+
+  // Sample data for the table
+  const batchProducts = [
+    {
+      id: 1,
+      batchId: "1123",
+      name: "1123-Aashirvad Atta with multigrains 500g",
+      image: "https://api.builder.io/api/v1/image/assets/TEMP/cebcb59d5dd9af010b6524d98f556bdeec8afb86?width=120",
+      timeLeft: "02h : 40m : 02s left",
+      quantity: 2
+    },
+    {
+      id: 2,
+      batchId: "1123",
+      name: "1123-Aashirvad Atta with multigrains 500g",
+      image: "https://api.builder.io/api/v1/image/assets/TEMP/cebcb59d5dd9af010b6524d98f556bdeec8afb86?width=120",
+      timeLeft: "02h : 40m : 02s left",
+      quantity: 2
+    },
+    {
+      id: 3,
+      batchId: "1123",
+      name: "1123-Aashirvad Atta with multigrains 500g",
+      image: "https://api.builder.io/api/v1/image/assets/TEMP/cebcb59d5dd9af010b6524d98f556bdeec8afb86?width=120",
+      timeLeft: "02h : 40m : 02s left",
+      quantity: 2
+    },
+    {
+      id: 4,
+      batchId: "1123",
+      name: "1123-Aashirvad Atta with multigrains 500g",
+      image: "https://api.builder.io/api/v1/image/assets/TEMP/cebcb59d5dd9af010b6524d98f556bdeec8afb86?width=120",
+      timeLeft: "02h : 40m : 02s left",
+      quantity: 2
+    },
+    {
+      id: 5,
+      batchId: "1123",
+      name: "1123-Aashirvad Atta with multigrains 500g",
+      image: "https://api.builder.io/api/v1/image/assets/TEMP/cebcb59d5dd9af010b6524d98f556bdeec8afb86?width=120",
+      timeLeft: "02h : 40m : 02s left",
+      quantity: 2
+    },
+    {
+      id: 6,
+      batchId: "1123",
+      name: "Batch id : 1123 Aashirvad Atta with multigrains 500g",
+      image: "https://api.builder.io/api/v1/image/assets/TEMP/cebcb59d5dd9af010b6524d98f556bdeec8afb86?width=120",
+      timeLeft: "02h : 40m : 02s left",
+      quantity: 2
+    },
+    {
+      id: 7,
+      batchId: "1123",
+      name: "1123-Aashirvad Atta with multigrains 500g",
+      image: "https://api.builder.io/api/v1/image/assets/TEMP/cebcb59d5dd9af010b6524d98f556bdeec8afb86?width=120",
+      timeLeft: "02h : 40m : 02s left",
+      quantity: 2
+    },
+    {
+      id: 8,
+      batchId: "1123",
+      name: "1123-Aashirvad Atta with multigrains 500g",
+      image: "https://api.builder.io/api/v1/image/assets/TEMP/cebcb59d5dd9af010b6524d98f556bdeec8afb86?width=120",
+      timeLeft: "02h : 40m : 02s left",
+      quantity: 2
+    }
+  ];
+
+  const handleProductSelect = (productId: number, isSelected: boolean) => {
+    console.log(`Product ${productId} ${isSelected ? 'selected' : 'deselected'}`);
+  };
+
+  const handleSelectAll = (isSelected: boolean) => {
+    console.log(`All products ${isSelected ? 'selected' : 'deselected'}`);
+  };
+
+  return (
+    <div className="space-y-6">
+      {/* Time Range Selector */}
+      <div className="w-full">
+        <ExBatchTimeRangeSelector />
+      </div>
+
+      {/* Products Table */}
+      <ExBatchTable
+        products={batchProducts}
+        onProductSelect={handleProductSelect}
+        onSelectAll={handleSelectAll}
+      />
+    </div>
+  );
+}
