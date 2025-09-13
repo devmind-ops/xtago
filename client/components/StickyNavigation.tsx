@@ -56,6 +56,7 @@ function RefundsIcon({ active = false }: { active?: boolean }) {
 export function StickyNavigation() {
   const navigate = useNavigate();
   const location = useLocation();
+  const isRefunds = location.pathname.startsWith("/refunds");
 
   const handleNavigation = (path: string) => {
     navigate(path);
@@ -107,15 +108,15 @@ export function StickyNavigation() {
             <div className="w-[75px]" aria-hidden />
 
             {/* Info */}
-            <button onClick={() => handleNavigation("/info")} className="flex flex-col items-center gap-1.5">
-              <InfoIcon active={isCurrentPath("/info")} />
-              <span className={`${isCurrentPath("/info") ? "text-[#FE8A00]" : "text-[#697B7B]"} font-normal text-xs font-['Poppins']`}>Info</span>
+            <button onClick={() => handleNavigation("/historyinfo")} className="flex flex-col items-center gap-1.5">
+              <InfoIcon active={isCurrentPath("/historyinfo")} />
+              <span className={`${isCurrentPath("/historyinfo") ? "text-[#FE8A00]" : "text-[#697B7B]"} font-normal text-xs font-['Poppins']`}>Info</span>
             </button>
 
             {/* Refunds */}
             <button onClick={() => handleNavigation("/refunds")} className="flex flex-col items-center gap-1.5">
-              <RefundsIcon active={isCurrentPath("/refunds")} />
-              <span className={`${isCurrentPath("/refunds") ? "text-[#FE8A00]" : "text-[#697B7B]"} font-normal text-xs font-['Poppins']`}>Refunds</span>
+              <RefundsIcon active={isRefunds} />
+              <span className={`${isRefunds ? "text-[#FE8A00]" : "text-[#697B7B]"} font-normal text-xs font-['Poppins']`}>Refunds</span>
             </button>
           </div>
         </div>

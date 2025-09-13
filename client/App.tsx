@@ -17,6 +17,13 @@ import ResetPassword from "./pages/ResetPassword";
 import AccountCreated from "./pages/AccountCreated";
 import SignIn from "./pages/SignIn";
 import CreateAccount from "./pages/CreateAccount";
+import Products from "./pages/Products";
+import EditProductPage from "./pages/EditProductPage";
+import AddProductPage from "./pages/AddProductPage";
+import ProductDetailPage from "./pages/ProductDetailPage";
+import Refunds from "./pages/Refunds";
+import EditRefund from "./pages/EditRefund";
+import HistoryInfo from "./pages/HistoryInfo";
 
 const queryClient = new QueryClient();
 
@@ -30,9 +37,14 @@ const App = () => (
           <Route path="/" element={<Dashboard />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/accounting" element={<Accounting />} />
-          <Route path="/products" element={<Dashboard />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/products/add" element={<AddProductPage />} />
+          <Route path="/products/view/:productId" element={<ProductDetailPage />} />
+          <Route path="/products/edit/:productId" element={<EditProductPage />} />
+          <Route path="/historyinfo" element={<HistoryInfo />} />
           <Route path="/info" element={<Dashboard />} />
-          <Route path="/refunds" element={<Dashboard />} />
+          <Route path="/refunds" element={<Refunds />} />
+          <Route path="/refunds/edit/:refundId" element={<EditRefund />} />
           <Route path="/sign-in" element={<SignIn />} />
           <Route path="/create-account" element={<CreateAccount />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
