@@ -215,7 +215,7 @@ export function BatchInfoPage() {
   return (
     <div className="flex flex-col items-center gap-[30px] w-full max-w-[396px] mx-auto">
       {/* Batch Table */}
-      <div className="flex flex-col w-full">
+      <div className="flex flex-col w-full rounded-3xl border border-[#22353E] overflow-hidden">
         {/* Table Header */}
         <div className="flex w-full">
           <div className="flex-1 p-3 flex items-center gap-2 rounded-tl-2xl border-b border-[#22353E] bg-[#1C242E]">
@@ -265,13 +265,10 @@ export function BatchInfoPage() {
       </div>
 
       {/* Permanent Batch Details Form */}
-      <div className="flex w-full p-4 flex-col justify-center items-center gap-6 rounded-3xl bg-[#1C242E]">
+      <div className="flex w-full p-4 flex-col justify-center items-center gap-6 rounded-3xl border border-[#22353E] bg-[#1C242E]">
         {/* Form Header */}
         <div className="flex justify-between items-center w-full">
           <h3 className="text-[#F6F6F6] font-['Space_Grotesk'] text-xl font-bold">Batch Details</h3>
-          <button>
-            <CloseIcon />
-          </button>
         </div>
 
         {/* Form Fields */}
@@ -354,14 +351,14 @@ export function BatchInfoPage() {
 
       {/* Batch Details Modal */}
       {showBatchModal && (
-        <div className="flex w-full p-4 flex-col justify-center items-center gap-6 rounded-3xl bg-[#1C242E]">
+        <div className="flex w-full p-4 flex-col justify-center items-center gap-6 rounded-3xl border border-[#22353E] bg-[#1C242E]">
           {/* Form Header */}
           <div className="flex justify-between items-center w-full">
             <h3 className="text-[#F6F6F6] font-['Space_Grotesk'] text-xl font-bold">Batch Details</h3>
             <button onClick={() => setShowBatchModal(false)}>
-              <CloseIcon />
-            </button>
-          </div>
+                <CloseIcon />
+              </button>
+            </div>
 
           {/* Form Fields */}
           <div className="flex w-full flex-col items-center gap-4">
@@ -421,9 +418,9 @@ export function BatchInfoPage() {
           </div>
 
           {/* Print Barcode Link */}
-          <button className="text-[#FE8A00] font-['Space_Grotesk'] text-base font-normal underline">
-            👉 Click to Print Barcode
-          </button>
+            <button className="text-[#FE8A00] font-['Space_Grotesk'] text-base font-normal underline">
+              👉 Click to Print Barcode
+            </button>
 
           {/* Form Buttons */}
           <div className="flex items-center gap-4">

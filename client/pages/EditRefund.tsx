@@ -17,7 +17,7 @@ function ProfileAvatar() {
   return (
     <img 
       className="w-11 h-11 rounded-full border-2 border-[#697B7B]" 
-      src="https://api.builder.io/api/v1/image/assets/TEMP/30c3de9cd71050d70477afda594579fb92b89b55?width=88" 
+      src="/assets/images/avatar-30c3de9c.png" 
       alt="Profile Avatar" 
     />
   );
@@ -322,7 +322,7 @@ export default function EditRefund() {
               </svg>
             ) : (
               <img
-                src="https://api.builder.io/api/v1/image/assets/TEMP/4470ab7fd3ea359d51624ea975bd9f362a5d0510?width=416"
+                src="/assets/images/product-4470ab7f.png"
                 alt="Product Image"
                 className="w-52 h-60 flex-shrink-0 rounded-3xl object-cover"
               />

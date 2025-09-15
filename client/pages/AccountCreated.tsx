@@ -19,7 +19,7 @@ export default function AccountCreated() {
             <div className="flex flex-col items-center gap-[50px] w-[191px]">
               {/* Success Illustration */}
               <img 
-                src="https://api.builder.io/api/v1/image/assets/TEMP/824342b9c69eab323b2d86edc29fa699f5934db5?width=434" 
+                src="/assets/images/account-created-824342b9.png" 
                 alt="Account Created Success"
                 className="w-[217px] h-[203px]"
               />

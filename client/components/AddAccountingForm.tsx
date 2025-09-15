@@ -37,7 +37,7 @@ export function AddAccountingForm({ isOpen, onClose, onSave }: AddAccountingForm
             </svg>
             <img 
               className="w-11 h-11 rounded-full border-2 border-[#697B7B]" 
-              src="https://api.builder.io/api/v1/image/assets/TEMP/30c3de9cd71050d70477afda594579fb92b89b55?width=88" 
+              src="/assets/images/avatar-30c3de9c.png" 
               alt="Profile" 
             />
             <div className="flex items-center justify-center p-3 rounded-2xl border border-[#697B7B] bg-[#1C242E]">

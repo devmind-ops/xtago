@@ -22,7 +22,7 @@ function ProfileAvatar() {
   return (
     <img 
       className="w-11 h-11 rounded-full border-2 border-[#697B7B]" 
-      src="https://api.builder.io/api/v1/image/assets/TEMP/30c3de9cd71050d70477afda594579fb92b89b55?width=88" 
+      src="/assets/images/avatar-30c3de9c.png" 
       alt="Profile Avatar" 
     />
   );
@@ -100,7 +100,7 @@ function Pagination() {
 
 
 export default function Accounting() {
-  const [activeTab, setActiveTab] = useState("one-time");
+  const [activeTab, setActiveTab] = useState("utilities");
   const [isAddFormOpen, setIsAddFormOpen] = useState(false);
   const [isEditFormOpen, setIsEditFormOpen] = useState(false);
   const [isDetailsCardOpen, setIsDetailsCardOpen] = useState(false);
@@ -186,12 +186,14 @@ export default function Accounting() {
         <FilterTabs activeTab={activeTab} onTabChange={setActiveTab} />
 
         {/* Data Table */}
-        <InteractiveDataTable
-          entries={currentEntries}
-          onEdit={handleEdit}
-          onView={handleView}
-          onDelete={handleDelete}
-        />
+        <div role="tabpanel" id={`panel-${activeTab}`} aria-labelledby={`tab-${activeTab}`}>
+          <InteractiveDataTable
+            entries={currentEntries}
+            onEdit={handleEdit}
+            onView={handleView}
+            onDelete={handleDelete}
+          />
+        </div>
 
         {/* Pagination */}
         <Pagination />

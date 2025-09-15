@@ -46,7 +46,7 @@ const mockProducts = [
   {
     id: 1,
     name: "Aashirvad Atta with multigrains 500g",
-    image: "https://api.builder.io/api/v1/image/assets/TEMP/cebcb59d5dd9af010b6524d98f556bdeec8afb86?width=120",
+    image: "/assets/images/product-cebcb59d.png",
     sellThroughRate: 82,
     stock: 2,
     status: "Active" as const,
@@ -54,7 +54,7 @@ const mockProducts = [
   {
     id: 2,
     name: "Kitchen Treasures Kashmiri chilli powder 500g",
-    image: "https://api.builder.io/api/v1/image/assets/TEMP/fd04a522651ba0259c23bf873f9bf1c36820ab3b?width=120",
+    image: "/assets/images/product-fd04a522.png",
     sellThroughRate: 82,
     stock: 2,
     status: "Active" as const,
@@ -62,7 +62,7 @@ const mockProducts = [
   {
     id: 3,
     name: "Aashirvad Atta with multigrains 500g",
-    image: "https://api.builder.io/api/v1/image/assets/TEMP/41969875a2043b891429657c524298ca94939b98?width=120",
+    image: "/assets/images/product-41969875.png",
     sellThroughRate: 82,
     stock: 30,
     status: "Clearance" as const,
@@ -70,7 +70,7 @@ const mockProducts = [
   {
     id: 4,
     name: "Kitchen Treasures Kashmiri chilli powder 500g",
-    image: "https://api.builder.io/api/v1/image/assets/TEMP/fd04a522651ba0259c23bf873f9bf1c36820ab3b?width=120",
+    image: "/assets/images/product-fd04a522.png",
     sellThroughRate: 82,
     stock: 2,
     status: "Inactive" as const,
@@ -78,7 +78,7 @@ const mockProducts = [
   {
     id: 5,
     name: "Aashirvad Atta with multigrains 500g",
-    image: "https://api.builder.io/api/v1/image/assets/TEMP/cebcb59d5dd9af010b6524d98f556bdeec8afb86?width=120",
+    image: "/assets/images/product-cebcb59d.png",
     sellThroughRate: 82,
     stock: 2,
     status: "Inactive" as const,
@@ -86,7 +86,7 @@ const mockProducts = [
   {
     id: 6,
     name: "Kitchen Treasures Kashmiri chilli powder 500g",
-    image: "https://api.builder.io/api/v1/image/assets/TEMP/fd04a522651ba0259c23bf873f9bf1c36820ab3b?width=120",
+    image: "/assets/images/product-fd04a522.png",
     sellThroughRate: 82,
     stock: 2,
     status: "Active" as const,
@@ -94,7 +94,7 @@ const mockProducts = [
   {
     id: 7,
     name: "Aashirvad Atta with multigrains 500g",
-    image: "https://api.builder.io/api/v1/image/assets/TEMP/41969875a2043b891429657c524298ca94939b98?width=120",
+    image: "/assets/images/product-41969875.png",
     sellThroughRate: 82,
     stock: 30,
     status: "Inactive" as const,
@@ -102,7 +102,7 @@ const mockProducts = [
   {
     id: 8,
     name: "Kitchen Treasures Kashmiri chilli powder 500g",
-    image: "https://api.builder.io/api/v1/image/assets/TEMP/fd04a522651ba0259c23bf873f9bf1c36820ab3b?width=120",
+    image: "/assets/images/product-fd04a522.png",
     sellThroughRate: 82,
     stock: 2,
     status: "Clearance" as const,
@@ -110,7 +110,7 @@ const mockProducts = [
   {
     id: 9,
     name: "Aashirvad Atta with multigrains 500g",
-    image: "https://api.builder.io/api/v1/image/assets/TEMP/cebcb59d5dd9af010b6524d98f556bdeec8afb86?width=120",
+    image: "/assets/images/product-cebcb59d.png",
     sellThroughRate: 82,
     stock: 2,
     status: "Active" as const,

@@ -17,7 +17,7 @@ function ProfileAvatar() {
   return (
     <img 
       className="w-11 h-11 rounded-full border-2 border-[#697B7B]" 
-      src="https://api.builder.io/api/v1/image/assets/TEMP/30c3de9cd71050d70477afda594579fb92b89b55?width=88" 
+      src="/assets/images/avatar-30c3de9c.png" 
       alt="Profile Avatar" 
     />
   );
@@ -63,7 +63,7 @@ export default function ProductDetailPage() {
   const productData = {
     id: productId,
     name: "Aashirvad Atta with multigrains 500g",
-    image: "https://api.builder.io/api/v1/image/assets/TEMP/cebcb59d5dd9af010b6524d98f556bdeec8afb86?width=728",
+    image: "/assets/images/product-cebcb59d.png",
     sellThroughRate: 82,
     stock: 2,
     status: "Active"

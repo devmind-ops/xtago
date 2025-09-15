@@ -9,7 +9,7 @@ export function ExBatchContent() {
       id: 1,
       batchId: "1123",
       name: "1123-Aashirvad Atta with multigrains 500g",
-      image: "https://api.builder.io/api/v1/image/assets/TEMP/cebcb59d5dd9af010b6524d98f556bdeec8afb86?width=120",
+      image: "/assets/images/product-cebcb59d.png",
       timeLeft: "02h : 40m : 02s left",
       quantity: 2
     },
@@ -17,7 +17,7 @@ export function ExBatchContent() {
       id: 2,
       batchId: "1123",
       name: "1123-Aashirvad Atta with multigrains 500g",
-      image: "https://api.builder.io/api/v1/image/assets/TEMP/cebcb59d5dd9af010b6524d98f556bdeec8afb86?width=120",
+      image: "/assets/images/product-cebcb59d.png",
       timeLeft: "02h : 40m : 02s left",
       quantity: 2
     },
@@ -25,7 +25,7 @@ export function ExBatchContent() {
       id: 3,
       batchId: "1123",
       name: "1123-Aashirvad Atta with multigrains 500g",
-      image: "https://api.builder.io/api/v1/image/assets/TEMP/cebcb59d5dd9af010b6524d98f556bdeec8afb86?width=120",
+      image: "/assets/images/product-cebcb59d.png",
       timeLeft: "02h : 40m : 02s left",
       quantity: 2
     },
@@ -33,7 +33,7 @@ export function ExBatchContent() {
       id: 4,
       batchId: "1123",
       name: "1123-Aashirvad Atta with multigrains 500g",
-      image: "https://api.builder.io/api/v1/image/assets/TEMP/cebcb59d5dd9af010b6524d98f556bdeec8afb86?width=120",
+      image: "/assets/images/product-cebcb59d.png",
       timeLeft: "02h : 40m : 02s left",
       quantity: 2
     },
@@ -41,7 +41,7 @@ export function ExBatchContent() {
       id: 5,
       batchId: "1123",
       name: "1123-Aashirvad Atta with multigrains 500g",
-      image: "https://api.builder.io/api/v1/image/assets/TEMP/cebcb59d5dd9af010b6524d98f556bdeec8afb86?width=120",
+      image: "/assets/images/product-cebcb59d.png",
       timeLeft: "02h : 40m : 02s left",
       quantity: 2
     },
@@ -49,7 +49,7 @@ export function ExBatchContent() {
       id: 6,
       batchId: "1123",
       name: "Batch id : 1123 Aashirvad Atta with multigrains 500g",
-      image: "https://api.builder.io/api/v1/image/assets/TEMP/cebcb59d5dd9af010b6524d98f556bdeec8afb86?width=120",
+      image: "/assets/images/product-cebcb59d.png",
       timeLeft: "02h : 40m : 02s left",
       quantity: 2
     },
@@ -57,7 +57,7 @@ export function ExBatchContent() {
       id: 7,
       batchId: "1123",
       name: "1123-Aashirvad Atta with multigrains 500g",
-      image: "https://api.builder.io/api/v1/image/assets/TEMP/cebcb59d5dd9af010b6524d98f556bdeec8afb86?width=120",
+      image: "/assets/images/product-cebcb59d.png",
       timeLeft: "02h : 40m : 02s left",
       quantity: 2
     },
@@ -65,7 +65,7 @@ export function ExBatchContent() {
       id: 8,
       batchId: "1123",
       name: "1123-Aashirvad Atta with multigrains 500g",
-      image: "https://api.builder.io/api/v1/image/assets/TEMP/cebcb59d5dd9af010b6524d98f556bdeec8afb86?width=120",
+      image: "/assets/images/product-cebcb59d.png",
       timeLeft: "02h : 40m : 02s left",
       quantity: 2
     }
