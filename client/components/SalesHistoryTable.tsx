@@ -113,11 +113,11 @@ export function SalesHistoryTable({ onFilterClick, currentPage, itemsPerPage }: 
       <div className="flex flex-col">
         {/* Table Header */}
         <div className="flex w-full items-center">
-          <div className="flex w-20 p-4 flex-col justify-center items-center gap-2.5 flex-shrink-0 rounded-tl-[24px] border-b border-[#22353E] bg-[#1C242E]">
+          <div className="flex w-22 p-4 flex-col justify-center items-center gap-2.5 flex-shrink-0 rounded-tl-[24px] border-b border-[#22353E] bg-[#1C242E]">
             <span className="text-[#C4C4C4] font-['Space_Grotesk'] text-[16px] font-normal">Order ID</span>
           </div>
           
-          <div className="flex w-[182px] p-4 items-center gap-3 flex-shrink-0 border-b border-[#22353E] bg-[#1C242E]">
+          <div className="flex w-[170px] p-4 items-center gap-3 flex-shrink-0 border-b border-[#22353E] bg-[#1C242E]">
             <span className="text-[#C4C4C4] font-['Space_Grotesk'] text-[16px] font-normal">Amount</span>
             <SortIcon />
           </div>

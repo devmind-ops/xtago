@@ -98,7 +98,7 @@ export function AuditTrailTable({ onFilterClick }: AuditTrailTableProps) {
             <span className="text-[#C4C4C4] font-['Space_Grotesk'] text-[16px] font-normal">Action</span>
           </div>
           
-          <div className="flex w-[113px] p-4 items-center gap-3 flex-shrink-0 border-b border-[#22353E] bg-[#1C242E]">
+          <div className="flex w-[118px] p-4 items-center gap-2.5 flex-shrink-0 border-b border-[#22353E] bg-[#1C242E]">
             <span className="text-[#C4C4C4] font-['Space_Grotesk'] text-[16px] font-normal">Done By</span>
             <SortIcon />
           </div>
