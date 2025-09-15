@@ -1,4 +1,4 @@
-import { ExBatchTimeRangeSelector } from "@/components/ExBatchTimeRangeSelector";
+import { TimeRangeSelector } from "@/components/TimeRangeSelector";
 import { ExBatchTable } from "@/components/ExBatchTable";
 
 export function ExBatchContent() {
@@ -83,7 +83,7 @@ export function ExBatchContent() {
     <div className="space-y-6">
       {/* Time Range Selector */}
       <div className="w-full">
-        <ExBatchTimeRangeSelector />
+        <TimeRangeSelector />
       </div>
 
       {/* Products Table */}

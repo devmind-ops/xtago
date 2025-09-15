@@ -100,8 +100,8 @@ export function StickyNavigation() {
 
             {/* Products */}
             <button onClick={() => handleNavigation("/products")} className="flex flex-col items-center gap-1.5">
-              <ProductsIcon active={isCurrentPath("/products")} />
-              <span className={`${isCurrentPath("/products") ? "text-[#FE8A00]" : "text-[#697B7B]"} font-normal text-xs font-['Poppins']`}>Products</span>
+              <ProductsIcon active={location.pathname.startsWith("/products")} />
+              <span className={`${location.pathname.startsWith("/products") ? "text-[#FE8A00]" : "text-[#697B7B]"} font-normal text-xs font-['Poppins']`}>Products</span>
             </button>
 
             {/* Spacer under FAB to keep symmetry */}

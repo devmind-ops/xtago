@@ -41,23 +41,34 @@ function NotificationIcon() {
 function AISearchBar() {
   return (
     <div className="relative flex items-center bg-[#1C2831] rounded-2xl border border-[#2B4755] p-4">
-      <div className="flex items-center justify-center w-8 h-8 rounded-full bg-[#0B1B26] border border-[#02FDFE] mr-3">
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M14.7 14.7L10.9 10.9M12.5 6.5C12.5 9.81371 9.81371 12.5 6.5 12.5C3.18629 12.5 0.5 9.81371 0.5 6.5C0.5 3.18629 3.18629 0.5 6.5 0.5C9.81371 0.5 12.5 3.18629 12.5 6.5Z" stroke="#02FDFE" strokeWidth="1"/>
-        </svg>
+      <div className="flex items-center justify-center w-9 h-9 rounded-full bg-[#0B1B26] border border-[#02FDFE] mr-3">
+        <img 
+          className="w-11 h-11 rounded-full" 
+          src="/assets/images/dashboard-search.png" 
+          alt="dashboard ai search" 
+        />
       </div>
+
       <span className="text-white text-base">Ask me anything</span>
+
       <div className="ml-auto flex items-center gap-2">
-        <button className="w-8 h-8 rounded-full bg-[#0B1B26] border border-[#02FDFE] flex items-center justify-center">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <button
+          type="button"
+          aria-label="Add"
+          className="w-8 h-8 rounded-full bg-[#0B1B26] border border-[#02FDFE] flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-[#02FDFE]"
+        >
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
             <path d="M8 1V15M1 8H15" stroke="#02FDFE" strokeWidth="1.5" strokeLinecap="round"/>
           </svg>
         </button>
-        <button className="w-8 h-8 rounded-full bg-[#0B1B26] border border-[#02FDFE] flex items-center justify-center">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="6" y="2" width="4" height="8" rx="2" stroke="#02FDFE" strokeWidth="1.5"/>
-            <path d="M4 8V9C4 11.2091 5.79086 13 8 13C10.2091 13 12 11.2091 12 9V8" stroke="#02FDFE" strokeWidth="1.5"/>
-            <path d="M8 13V15M6 15H10" stroke="#02FDFE" strokeWidth="1.5" strokeLinecap="round"/>
+
+        <button
+          type="button"
+          aria-label="Voice input"
+          className="w-8 h-8 rounded-full bg-[#0B1B26] border border-[#02FDFE] flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-[#02FDFE]"
+        >
+          <svg width="16" height="16" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
+            <path d="M9.5 12.3331C8.7262 12.3331 8.0685 12.0568 7.5268 11.5042C6.9851 10.9516 6.7143 10.2805 6.7143 9.491V5.8068C6.7143 5.0174 6.9851 4.3463 7.5268 3.7937C8.0685 3.241 8.7262 2.9647 9.5 2.9647C10.2738 2.9647 10.9315 3.241 11.4732 3.7937C12.0149 4.3463 12.2857 5.0174 12.2857 5.8068V9.491C12.2857 10.2805 12.0149 10.9516 11.4732 11.5042C10.9315 12.0568 10.2738 12.3331 9.5 12.3331ZM8.5714 15.9647V14.0516C6.9619 13.8305 5.631 13.0963 4.5786 11.8489C3.5262 10.6016 3 9.1489 3 7.491H4.8571C4.8571 8.8016 5.31 9.9188 6.2156 10.8428C7.1213 11.7668 8.2161 12.2285 9.5 12.2279C10.7839 12.2272 11.879 11.7652 12.7853 10.8419C13.6916 9.9185 14.1441 8.8016 14.1429 7.491H16C16 9.1489 15.4738 10.6016 14.4214 11.8489C13.369 13.0963 12.0381 13.8305 10.4286 14.0516V15.9647H8.5714Z" fill="#02FDFE"/>
           </svg>
         </button>
       </div>
