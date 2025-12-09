@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { XtagoLogo } from "@/components/XtagoLogo";
 import { StickyNavigation } from "@/components/StickyNavigation";
+import { FileUpload } from "@/components/FileUpload";
 
 function AiIcon() {
   return (
@@ -218,6 +219,9 @@ export default function EditRefund() {
   // Image/QR code toggle state
   const [showQRCode, setShowQRCode] = useState(false);
 
+  // Uploaded files state
+  const [uploadedFiles, setUploadedFiles] = useState<File[]>([]);
+
   // Form data
   const [formData, setFormData] = useState({
     productName: "Enter Brands Name",
@@ -258,8 +262,18 @@ export default function EditRefund() {
   };
 
   const handleSave = () => {
-    // TODO: Implement save functionality
+    // Save refund data with uploaded files
     console.log('Saving refund data:', formData);
+    console.log('Uploaded files:', uploadedFiles);
+    
+    // In real implementation, you would upload files and save refund data
+    // const formDataToSend = new FormData();
+    // formDataToSend.append('refundData', JSON.stringify(formData));
+    // uploadedFiles.forEach((file, index) => {
+    //   formDataToSend.append(`file_${index}`, file);
+    // });
+    // await fetch('/api/refunds', { method: 'POST', body: formDataToSend });
+    
     navigate('/refunds');
   };
 
@@ -526,30 +540,17 @@ export default function EditRefund() {
                 <div className="flex flex-col gap-4">
                   <div className="flex justify-between items-center">
                     <span className="text-[#F6F6F6] text-base font-normal font-['Space Grotesk']">Upload Image</span>
-                    <button className="p-1 text-[#697B7B] hover:text-[#F6F6F6]">ℹ</button>
+                    <button className="p-1 text-[#697B7B] hover:text-[#F6F6F6]" title="Upload images or documents as evidence">
+                      ℹ
+                    </button>
                   </div>
                   
-                  <div className="flex items-center justify-center h-32 border-2 border-dashed border-[#697B7B] rounded-3xl bg-[#22353E]">
-                    <div className="text-center">
-                      <div className="mb-2">📷</div>
-                      <div className="text-[#FE8A00] text-xs font-bold font-['Space Grotesk'] mb-1">Drag & Drop file here</div>
-                      <div className="text-[#00E074] text-xs font-normal font-['Space Grotesk']">Or click to browse (4 mb max)</div>
-                    </div>
-                  </div>
-
-                  {/* Image Preview Grid */}
-                  <div className="flex items-center justify-center gap-2">
-                    {[1, 2, 3, 4].map((i) => (
-                      <div key={i} className="relative">
-                        <div className="w-16 h-16 bg-[#22353E] rounded-2xl flex items-center justify-center">
-                          <span className="text-[#697B7B] text-sm">📷</span>
-                        </div>
-                        <button className="absolute -top-1 -right-1 w-4 h-4 bg-[#697B7B] rounded-full flex items-center justify-center">
-                          <span className="text-white text-xs">×</span>
-                        </button>
-                      </div>
-                    ))}
-                  </div>
+                  <FileUpload
+                    maxFiles={10}
+                    maxSizeMB={4}
+                    acceptedTypes={["image/*", "application/pdf"]}
+                    onFilesChange={setUploadedFiles}
+                  />
                 </div>
               </div>
             </CollapsibleSection>

@@ -24,6 +24,8 @@ import ProductDetailPage from "./pages/ProductDetailPage";
 import Refunds from "./pages/Refunds";
 import EditRefund from "./pages/EditRefund";
 import HistoryInfo from "./pages/HistoryInfo";
+import Logout from "./pages/Logout";
+import UploadFile from "./pages/UploadFile";
 
 const queryClient = new QueryClient();
 
@@ -52,6 +54,8 @@ const App = () => (
           <Route path="/verify-code" element={<VerifyCode />} />
           <Route path="/reset-password" element={<ResetPassword />} />
           <Route path="/account-created" element={<AccountCreated />} />
+          <Route path="/logout" element={<Logout />} />
+          <Route path="/upload" element={<UploadFile />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
