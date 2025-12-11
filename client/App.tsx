@@ -26,6 +26,8 @@ import EditRefund from "./pages/EditRefund";
 import HistoryInfo from "./pages/HistoryInfo";
 import Logout from "./pages/Logout";
 import UploadFile from "./pages/UploadFile";
+import { PWAInstallPrompt } from "./components/PWAInstallPrompt";
+import { PWAUpdatePrompt } from "./components/PWAUpdatePrompt";
 
 const queryClient = new QueryClient();
 
@@ -35,6 +37,8 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <PWAInstallPrompt />
+        <PWAUpdatePrompt />
         <Routes>
           <Route path="/" element={<Dashboard />} />
           <Route path="/dashboard" element={<Dashboard />} />
