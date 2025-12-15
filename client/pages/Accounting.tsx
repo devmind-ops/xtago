@@ -167,9 +167,9 @@ export default function Accounting() {
     <div className="min-h-screen bg-[#151D26] relative">
       <div className="max-w-[428px] mx-auto bg-[#151D26] pb-[120px]">
         {/* Header */}
-        <header className="sticky top-0 z-40 flex items-center justify-between px-4 pt-11 pb-2 bg-[#151D26] border-b border-[#0F1A22]">
+        <header className="sticky top-0 z-40 flex items-center justify-between px-3 sm:px-4 pt-11 pb-2 bg-[#151D26] border-b border-[#0F1A22]">
           <XtagoLogo />
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2 sm:gap-4">
             <AiIcon />
             <ProfileAvatar />
             <NotificationIcon />

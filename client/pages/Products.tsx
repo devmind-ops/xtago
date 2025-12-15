@@ -53,9 +53,9 @@ export default function Products() {
     <div className="min-h-screen bg-xtago-background relative">
       <div className="max-w-[428px] mx-auto bg-xtago-background relative overflow-visible pb-[120px]">
         {/* Sticky Header */}
-        <header className="sticky top-0 z-40 flex items-center justify-between px-4 pt-11 pb-2 bg-xtago-background border-b border-[#0F1A22]">
+        <header className="sticky top-0 z-40 flex items-center justify-between px-3 sm:px-4 pt-11 pb-2 bg-xtago-background border-b border-[#0F1A22]">
           <XtagoLogo />
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2 sm:gap-4">
             <AiIcon />
             <ProfileAvatar />
             <NotificationIcon />
@@ -63,7 +63,7 @@ export default function Products() {
         </header>
 
         {/* Main Content */}
-        <div className="px-4 mt-6 space-y-4">
+        <div className="px-3 sm:px-4 mt-6 space-y-4">
           {/* Tabs */}
           <ProductTabs activeTab={activeTab} onTabChange={handleTabChange} />
 

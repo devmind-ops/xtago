@@ -86,9 +86,9 @@ function RefundIcon() {
 
 export function QuickStats() {
   return (
-    <div className="px-4 mb-6">
-      <h2 className="text-[#F6F6F6] text-lg font-bold mb-4">Quick Stats</h2>
-      <div className="grid grid-cols-2 gap-4">
+    <div className="px-3 sm:px-4 mb-6">
+      <h2 className="text-[#F6F6F6] text-base sm:text-lg font-bold mb-4">Quick Stats</h2>
+      <div className="grid grid-cols-2 gap-2 sm:gap-4">
         <StatCard
           title="Total Live Products"
           value="25,430"
@@ -119,7 +119,7 @@ export function QuickStats() {
       </div>
       
       {/* Warning Cards Row */}
-      <div className="grid grid-cols-2 gap-4 mt-4">
+      <div className="grid grid-cols-2 gap-2 sm:gap-4 mt-4">
         <StatCard
           title="Expiring Batches"
           value="12"

@@ -40,18 +40,18 @@ function NotificationIcon() {
 
 function AISearchBar() {
   return (
-    <div className="relative flex items-center bg-[#1C2831] rounded-2xl border border-[#2B4755] p-4">
-      <div className="flex items-center justify-center w-9 h-9 rounded-full bg-[#0B1B26] border border-[#02FDFE] mr-3">
+    <div className="relative flex items-center bg-[#1C2831] rounded-2xl border border-[#2B4755] p-3 sm:p-4">
+      <div className="flex items-center justify-center w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#0B1B26] border border-[#02FDFE] mr-2 sm:mr-3 flex-shrink-0">
         <img 
-          className="w-11 h-11 rounded-full" 
+          className="w-10 h-10 sm:w-11 sm:h-11 rounded-full" 
           src="/assets/images/dashboard-search.png" 
           alt="dashboard ai search" 
         />
       </div>
 
-      <span className="text-white text-base">Ask me anything</span>
+      <span className="text-white text-sm sm:text-base truncate">Ask me anything</span>
 
-      <div className="ml-auto flex items-center gap-2">
+      <div className="ml-auto flex items-center gap-1.5 sm:gap-2 flex-shrink-0">
         <button
           type="button"
           aria-label="Add"
@@ -99,9 +99,9 @@ export default function Dashboard() {
     <div className="min-h-screen bg-[#151D26] relative">
       <div className="max-w-[428px] mx-auto bg-[#151D26] relative overflow-visible pb-[120px]">
         {/* Header */}
-        <header className="sticky top-0 z-40 flex items-center justify-between px-4 pt-11 pb-2 bg-[#151D26] border-b border-[#0F1A22]">
+        <header className="sticky top-0 z-40 flex items-center justify-between px-3 sm:px-4 pt-11 pb-2 bg-[#151D26] border-b border-[#0F1A22]">
           <XtagoLogo />
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2 sm:gap-4">
             <AiIcon />
             <ProfileAvatar />
             <NotificationIcon />
@@ -109,7 +109,7 @@ export default function Dashboard() {
         </header>
 
         {/* AI Search Bar */}
-        <div className="px-4 mt-6 mb-6">
+        <div className="px-3 sm:px-4 mt-6 mb-6">
           <AISearchBar />
         </div>
 

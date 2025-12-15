@@ -187,21 +187,21 @@ export function ProductsList() {
   return (
     <div className="space-y-4">
       {/* Header with title and action buttons */}
-      <div className="flex items-center justify-between relative">
-        <h1 className="text-xtago-text text-lg font-bold">Products</h1>
-        <div className="flex items-center gap-2">
+      <div className="flex items-center justify-between relative gap-2">
+        <h1 className="text-xtago-text text-sm sm:text-base md:text-lg font-bold flex-shrink-0">Products</h1>
+        <div className="flex items-center gap-1.5 sm:gap-2 flex-shrink-0">
           {/* Search Popover */}
           <Popover open={isSearchOpen} onOpenChange={setIsSearchOpen}>
             <PopoverTrigger asChild>
               <button
                 onClick={handleSearchToggle}
-                className="flex items-center justify-center w-12 h-12 bg-xtago-surface rounded-2xl"
+                className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 bg-xtago-surface rounded-2xl"
                 aria-label="Open search"
               >
                 <SearchIcon />
               </button>
             </PopoverTrigger>
-            <PopoverContent align="end" side="bottom" sideOffset={8} className="w-[18rem] max-w-[90vw] rounded-2xl border-[#22353E] bg-[#1C242E] p-3">
+            <PopoverContent align="end" side="bottom" sideOffset={8} className="w-[18rem] max-w-[calc(100vw-2rem)] rounded-2xl border-[#22353E] bg-[#1C242E] p-3">
               <div className="flex items-center gap-2">
                 <SearchIcon />
                 <input
@@ -224,7 +224,7 @@ export function ProductsList() {
           </Popover>
 
           {/* QR Scan Button */}
-          <button className="flex items-center justify-center w-12 h-12 bg-xtago-surface rounded-2xl">
+          <button className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 bg-xtago-surface rounded-2xl">
             <QRScanIcon />
           </button>
 
@@ -232,20 +232,20 @@ export function ProductsList() {
           <Popover open={isFilterOpen} onOpenChange={setIsFilterOpen}>
             <PopoverTrigger asChild>
               <button
-                className="flex items-center justify-center w-12 h-12 bg-xtago-surface rounded-2xl"
+                className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 bg-xtago-surface rounded-2xl"
                 aria-label="Open filters"
               >
                 <FilterIcon />
               </button>
             </PopoverTrigger>
-            <PopoverContent align="end" side="bottom" sideOffset={8} className="w-[199px] max-w-[90vw] p-6 rounded-xl bg-[#151D26] border-0 shadow-[0_0_88px_rgba(0,0,0,0.25)]">
+            <PopoverContent align="end" side="bottom" sideOffset={8} className="w-[199px] max-w-[calc(100vw-2rem)] p-4 sm:p-6 rounded-xl bg-[#151D26] border-0 shadow-[0_0_88px_rgba(0,0,0,0.25)]">
               <div className="space-y-3">
                 {(["Category","Vendor","Stock","Expiry"] as const).map((section) => (
                   <div key={section}>
                     <button
                       onClick={() => setActiveFilterSection(section)}
                       className={cn(
-                        "w-full h-[42px] px-9 flex items-center justify-center rounded-2xl font-bold text-base transition-colors",
+                        "w-full h-9 sm:h-[42px] px-4 sm:px-6 md:px-9 flex items-center justify-center rounded-xl sm:rounded-2xl font-bold text-xs sm:text-sm md:text-base transition-colors",
                         activeFilterSection === section
                           ? "bg-xtago-primary text-xtago-background"
                           : "text-xtago-text border-b border-xtago-primary"
@@ -255,27 +255,27 @@ export function ProductsList() {
                     </button>
 
                     {activeFilterSection === "Stock" && section === "Stock" && (
-                      <div className="mt-3 p-6 bg-[#1C242E] rounded-xl shadow-[0_0_88px_rgba(0,0,0,0.25)]">
-                        <div className="space-y-3">
+                      <div className="mt-3 p-4 sm:p-6 bg-[#1C242E] rounded-xl shadow-[0_0_88px_rgba(0,0,0,0.25)]">
+                        <div className="space-y-2 sm:space-y-3">
                           <div className="flex items-center gap-1.5">
                             <button
                               onClick={() => toggleStock("lowStock")}
                               className={cn(
-                                "w-4 h-4 rounded-xl border border-xtago-background flex items-center justify-center",
+                                "w-4 h-4 rounded-xl border border-xtago-background flex items-center justify-center flex-shrink-0",
                                 stockFilters.lowStock ? "bg-xtago-primary" : "bg-transparent"
                               )}
                             />
-                            <span className="text-[#C4C4C4] text-sm font-medium">Low Stock</span>
+                            <span className="text-[#C4C4C4] text-xs sm:text-sm font-medium">Low Stock</span>
                           </div>
                           <div className="flex items-center gap-1.5">
                             <button
                               onClick={() => toggleStock("outOfStock")}
                               className={cn(
-                                "w-4 h-4 rounded-xl border border-xtago-background flex items-center justify-center",
+                                "w-4 h-4 rounded-xl border border-xtago-background flex items-center justify-center flex-shrink-0",
                                 stockFilters.outOfStock ? "bg-xtago-primary" : "bg-transparent"
                               )}
                             />
-                            <span className="text-[#C4C4C4] text-sm font-medium">Out of Stock</span>
+                            <span className="text-[#C4C4C4] text-xs sm:text-sm font-medium">Out of Stock</span>
                           </div>
                         </div>
                       </div>
@@ -289,11 +289,11 @@ export function ProductsList() {
           {/* Add Button */}
           <button
             onClick={() => navigate('/products/add')}
-            className="flex items-center gap-2 px-5 py-2.5 bg-xtago-primary rounded-2xl text-xtago-background font-bold text-base"
+            className="flex items-center gap-1 sm:gap-2 px-3 sm:px-4 md:px-5 py-2 sm:py-2.5 bg-xtago-primary rounded-2xl text-xtago-background font-bold text-xs sm:text-sm md:text-base"
             aria-label="Add product"
           >
             <AddIcon />
-            <span>Add</span>
+            <span className="hidden sm:inline">Add</span>
           </button>
         </div>
       </div>

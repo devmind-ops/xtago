@@ -81,15 +81,15 @@ export function SalesHistoryTable({ onFilterClick, currentPage, itemsPerPage }: 
   const paginatedOrders = orders.slice(start, start + itemsPerPage);
 
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex flex-col gap-3 sm:gap-4">
       {/* Header with Search and Actions */}
-      <div className="flex justify-between items-center w-full">
-        <h2 className="text-[#F6F6F6] font-['Space_Grotesk'] text-[16px] font-bold">
+      <div className="flex justify-between items-center w-full gap-2">
+        <h2 className="text-[#F6F6F6] font-['Space_Grotesk'] text-sm sm:text-base font-bold flex-shrink-0">
           Sales History
         </h2>
-        <div className="flex items-center gap-[7px]">
+        <div className="flex items-center gap-1.5 sm:gap-2 flex-shrink-0">
           {/* Search Input */}
-          <div className="flex p-[15px_16px] items-center gap-[30px] rounded-2xl bg-[#1C242E]">
+          <div className="flex p-2.5 sm:p-[15px_16px] items-center gap-2 sm:gap-[30px] rounded-2xl bg-[#1C242E]">
             <SearchIcon />
           </div>
           
@@ -97,33 +97,35 @@ export function SalesHistoryTable({ onFilterClick, currentPage, itemsPerPage }: 
           <button
             type="button"
             onClick={onFilterClick}
-            className="flex w-[50px] h-12 justify-center items-center gap-2 rounded-2xl bg-[#1C242E]"
+            className="flex w-10 h-10 sm:w-[50px] sm:h-12 justify-center items-center gap-2 rounded-2xl bg-[#1C242E]"
           >
             <FilterIcon />
           </button>
           
           {/* Download Button */}
-          <div className="flex p-[15px_16px] items-center gap-4 rounded-2xl bg-[#1C242E]">
+          <div className="flex p-2.5 sm:p-[15px_16px] items-center gap-2 sm:gap-4 rounded-2xl bg-[#1C242E]">
             <DownloadIcon />
           </div>
         </div>
       </div>
 
       {/* Table */}
-      <div className="flex flex-col">
+      <div className="flex flex-col w-full">
         {/* Table Header */}
         <div className="flex w-full items-center">
-          <div className="flex w-22 p-4 flex-col justify-center items-center gap-2.5 flex-shrink-0 rounded-tl-[24px] border-b border-[#22353E] bg-[#1C242E]">
-            <span className="text-[#C4C4C4] font-['Space_Grotesk'] text-[16px] font-normal">Order ID</span>
+          <div className="flex flex-1 min-w-0 p-2 sm:p-3 md:p-4 flex-col justify-center items-center gap-1 sm:gap-2 flex-shrink-0 rounded-tl-[16px] sm:rounded-tl-[24px] border-b border-[#22353E] bg-[#1C242E]">
+            <span className="text-[#C4C4C4] font-['Space_Grotesk'] text-[10px] sm:text-xs md:text-sm lg:text-base font-normal text-center truncate w-full">Order ID</span>
           </div>
           
-          <div className="flex w-[170px] p-4 items-center gap-3 flex-shrink-0 border-b border-[#22353E] bg-[#1C242E]">
-            <span className="text-[#C4C4C4] font-['Space_Grotesk'] text-[16px] font-normal">Amount</span>
-            <SortIcon />
+          <div className="flex flex-1 min-w-0 p-2 sm:p-3 md:p-4 items-center gap-1 sm:gap-2 flex-shrink-0 border-b border-[#22353E] bg-[#1C242E]">
+            <span className="text-[#C4C4C4] font-['Space_Grotesk'] text-[10px] sm:text-xs md:text-sm lg:text-base font-normal truncate">Amount</span>
+            <div className="flex-shrink-0">
+              <SortIcon />
+            </div>
           </div>
           
-          <div className="flex w-[134px] p-4 flex-col justify-center items-center gap-2.5 flex-shrink-0 rounded-tr-[24px] border-b border-[#22353E] bg-[#1C242E]">
-            <span className="text-[#C4C4C4] font-['Space_Grotesk'] text-[16px] font-normal">Date & Time</span>
+          <div className="flex flex-1 min-w-0 p-2 sm:p-3 md:p-4 flex-col justify-center items-center gap-1 sm:gap-2 flex-shrink-0 rounded-tr-[16px] sm:rounded-tr-[24px] border-b border-[#22353E] bg-[#1C242E]">
+            <span className="text-[#C4C4C4] font-['Space_Grotesk'] text-[10px] sm:text-xs md:text-sm lg:text-base font-normal text-center truncate w-full">Date & Time</span>
           </div>
         </div>
 
@@ -136,20 +138,20 @@ export function SalesHistoryTable({ onFilterClick, currentPage, itemsPerPage }: 
               index % 2 === 1 ? 'bg-[#1C242E]' : ''
             }`}
           >
-            <div className="flex p-4 justify-center items-center gap-2.5 border-r border-b border-l border-[#22353E]">
-              <span className="text-[#F6F6F6] font-['Space_Grotesk'] text-[16px] font-medium">
+            <div className="flex flex-1 min-w-0 p-2 sm:p-3 md:p-4 justify-center items-center gap-1 sm:gap-2 border-r border-b border-l border-[#22353E]">
+              <span className="text-[#F6F6F6] font-['Space_Grotesk'] text-[10px] sm:text-xs md:text-sm lg:text-base font-medium text-center truncate w-full" title={order.orderId}>
                 {order.orderId}
               </span>
             </div>
             
-            <div className="flex w-[180px] p-4 items-center gap-2.5 border-b border-[#22353E]">
-              <span className="text-[#F6F6F6] font-['Space_Grotesk'] text-[16px] font-medium">
+            <div className="flex flex-1 min-w-0 p-2 sm:p-3 md:p-4 items-center gap-1 sm:gap-2 border-b border-[#22353E]">
+              <span className="text-[#F6F6F6] font-['Space_Grotesk'] text-[10px] sm:text-xs md:text-sm lg:text-base font-medium truncate" title={order.amount}>
                 {order.amount}
               </span>
             </div>
             
-            <div className="flex w-[135px] h-[52px] p-4 justify-center items-center gap-2.5 border-r border-b border-l border-[#22353E]">
-              <span className="text-[#C4C4C4] font-['Space_Grotesk'] text-[16px] font-medium whitespace-pre-line text-center">
+            <div className="flex flex-1 min-w-0 min-h-[44px] sm:min-h-[48px] md:h-[52px] p-2 sm:p-3 md:p-4 justify-center items-center gap-1 sm:gap-2 border-r border-b border-l border-[#22353E]">
+              <span className="text-[#C4C4C4] font-['Space_Grotesk'] text-[9px] sm:text-[10px] md:text-xs lg:text-sm font-medium whitespace-pre-line text-center leading-tight" title={order.dateTime}>
                 {order.dateTime}
               </span>
             </div>

@@ -87,11 +87,11 @@ export function StickyNavigation() {
         </button>
 
         {/* Bottom bar with concave notch */}
-        <div className="relative px-3 h-[65px] bg-[#030C15] rounded-t-2xl border-t border-[#0F1A22] overflow-visible">
+        <div className="relative px-2 sm:px-3 h-[65px] bg-[#030C15] rounded-t-2xl border-t border-[#0F1A22] overflow-visible">
           <div className="pointer-events-none absolute left-1/2 -top-8 -translate-x-1/2 w-[90px] h-[90px] bg-[#151D26] rounded-full" />
 
           {/* Nav items */}
-          <div className="relative z-10 h-full flex items-center justify-around">
+          <div className="relative z-10 h-full flex items-center justify-around gap-1 sm:gap-0">
             {/* Costs */}
             <button onClick={() => handleNavigation("/accounting")} className="flex flex-col items-center gap-1.5">
               <CostsIcon active={isCurrentPath("/accounting")} />

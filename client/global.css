@@ -108,4 +108,19 @@
     @apply bg-xtago-background text-xtago-text font-sans;
     font-family: "Space Grotesk", "Inter", system-ui, sans-serif;
   }
+
+  /* Responsive utilities for small screens */
+  @media (max-width: 375px) {
+    .container {
+      padding-left: 0.75rem;
+      padding-right: 0.75rem;
+    }
+  }
+
+  @media (max-width: 320px) {
+    .container {
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+    }
+  }
 }

@@ -47,7 +47,7 @@ function StatusBadge({ status }: { status: ProductStatus }) {
 
   return (
     <div 
-      className="px-4 py-2 rounded-3xl border text-xs font-medium"
+      className="px-2 sm:px-3 md:px-4 py-1 sm:py-1.5 md:py-2 rounded-2xl sm:rounded-3xl border text-[9px] sm:text-[10px] md:text-xs font-medium whitespace-nowrap"
       style={{
         color: config.color,
         backgroundColor: config.bgColor,
@@ -96,23 +96,23 @@ export function ProductCard({ product, onShowActionMenu }: ProductCardProps) {
   };
 
   return (
-    <div className="flex items-center gap-4 p-3">
+    <div className="flex items-center gap-2 sm:gap-3 md:gap-4 p-2 sm:p-3">
       {/* Product Image */}
       <img 
         src={product.image} 
         alt={product.name}
-        className="w-[60px] h-[66px] rounded-lg object-cover flex-shrink-0"
+        className="w-12 h-14 sm:w-14 sm:h-16 md:w-[60px] md:h-[66px] rounded-lg object-cover flex-shrink-0"
       />
 
       {/* Product Info */}
-      <div className="flex-1 space-y-1">
-        <h3 className="text-xtago-text text-base font-normal leading-tight">
+      <div className="flex-1 min-w-0 space-y-0.5 sm:space-y-1">
+        <h3 className="text-xtago-text text-xs sm:text-sm md:text-base font-normal leading-tight truncate" title={product.name}>
           {product.name}
         </h3>
-        <p className="text-[#C4C4C4] text-xs font-medium">
+        <p className="text-[#C4C4C4] text-[10px] sm:text-xs font-medium truncate">
           Sell-Through Rate : {product.sellThroughRate}%
         </p>
-        <p className="text-[#C4C4C4] text-xs font-medium">
+        <p className="text-[#C4C4C4] text-[10px] sm:text-xs font-medium">
           <span style={{ color: stockColor }}>
             {product.stock < 10 ? `0${product.stock}` : product.stock}
           </span>
@@ -121,7 +121,7 @@ export function ProductCard({ product, onShowActionMenu }: ProductCardProps) {
       </div>
 
       {/* Actions */}
-      <div className="flex flex-col items-center gap-6">
+      <div className="flex flex-col items-center gap-3 sm:gap-4 md:gap-6 flex-shrink-0">
         <button
           onClick={handleActionClick}
           className="text-xtago-muted hover:text-xtago-text"

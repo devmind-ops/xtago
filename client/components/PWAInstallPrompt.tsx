@@ -76,8 +76,8 @@ export function PWAInstallPrompt() {
   }
 
   return (
-    <div className="fixed bottom-4 left-1/2 transform -translate-x-1/2 z-50 max-w-[428px] w-full px-4">
-      <div className="bg-[#1C242E] border border-[#22353E] rounded-3xl p-4 shadow-2xl">
+    <div className="fixed bottom-4 left-1/2 transform -translate-x-1/2 z-50 max-w-[428px] w-full px-3 sm:px-4">
+      <div className="bg-[#1C242E] border border-[#22353E] rounded-3xl p-3 sm:p-4 shadow-2xl">
         <div className="flex items-start gap-3">
           <div className="flex-shrink-0">
             <div className="w-12 h-12 bg-[#FE8A00]/20 rounded-2xl flex items-center justify-center">
@@ -114,10 +114,10 @@ export function PWAInstallPrompt() {
             </div>
           </div>
           <div className="flex-1 min-w-0">
-            <h3 className="text-[#F6F6F6] text-base font-bold font-['Space_Grotesk'] mb-1">
+            <h3 className="text-[#F6F6F6] text-sm sm:text-base font-bold font-['Space_Grotesk'] mb-1">
               Install Xtago App
             </h3>
-            <p className="text-[#697B7B] text-sm font-normal font-['Space_Grotesk'] mb-3">
+            <p className="text-[#697B7B] text-xs sm:text-sm font-normal font-['Space_Grotesk'] mb-3">
               Install our app for a better experience with offline access and faster loading.
             </p>
             <div className="flex gap-2">

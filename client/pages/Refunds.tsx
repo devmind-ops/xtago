@@ -187,9 +187,9 @@ export default function Refunds() {
     <div className="min-h-screen bg-[#151D26] relative">
       <div className="max-w-[428px] mx-auto bg-[#151D26] relative overflow-visible pb-[120px]">
         {/* Header */}
-        <header className="sticky top-0 z-40 flex items-center justify-between px-4 pt-11 pb-2 bg-[#151D26] border-b border-[#0F1A22]">
+        <header className="sticky top-0 z-40 flex items-center justify-between px-3 sm:px-4 pt-11 pb-2 bg-[#151D26] border-b border-[#0F1A22]">
           <XtagoLogo />
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2 sm:gap-4">
             <AiIcon />
             <ProfileAvatar />
             <NotificationIcon />
@@ -197,19 +197,19 @@ export default function Refunds() {
         </header>
 
         {/* Content */}
-        <div className="flex flex-col items-start gap-4 px-4 mt-6">
+        <div className="flex flex-col items-start gap-3 sm:gap-4 px-3 sm:px-4 mt-6">
           {/* Title and Search */}
-          <div className="flex w-full justify-between items-center">
-            <h1 className="text-[#F6F6F6] text-base font-bold font-['Space Grotesk']">Refunds</h1>
-            <div className="flex items-center gap-2">
+          <div className="flex w-full justify-between items-center gap-2">
+            <h1 className="text-[#F6F6F6] text-sm sm:text-base font-bold font-['Space Grotesk'] flex-shrink-0">Refunds</h1>
+            <div className="flex items-center gap-1.5 sm:gap-2 flex-shrink-0">
               {/* Search Button */}
-              <button className="flex items-center justify-center w-12 h-12 bg-[#1C242E] rounded-2xl" aria-label="Search">
+              <button className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 bg-[#1C242E] rounded-2xl" aria-label="Search">
                 <SearchIcon />
               </button>
               {/* Filter Button */}
               <button
                 onClick={handleFilterClick}
-                className="flex items-center justify-center w-12 h-12 bg-[#1C242E] rounded-2xl"
+                className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 bg-[#1C242E] rounded-2xl"
                 aria-label="Open filters"
               >
                 <FilterIcon />
@@ -222,25 +222,29 @@ export default function Refunds() {
             {/* Table Header */}
             <div className="flex w-full items-center">
               {/* Checkbox Column Header */}
-              <div className="flex w-[52px] p-4 flex-col justify-center items-center gap-2.5 flex-shrink-0 rounded-tl-3xl border-b border-[#22353E] bg-[#1C242E]">
-                <span className="text-[#697B7B] text-base font-normal font-['Space Grotesk']">#</span>
+              <div className="flex w-10 sm:w-12 flex-shrink-0 p-2 sm:p-3 md:p-4 flex-col justify-center items-center gap-1 sm:gap-2 rounded-tl-2xl sm:rounded-tl-3xl border-b border-[#22353E] bg-[#1C242E]">
+                <span className="text-[#697B7B] text-[10px] sm:text-xs md:text-sm lg:text-base font-normal font-['Space Grotesk']">#</span>
               </div>
               
               {/* Product Name Column Header */}
-              <div className="flex w-[177px] p-4 items-center gap-3 flex-shrink-0 border-b border-[#22353E] bg-[#1C242E]">
-                <span className="text-[#C4C4C4] text-base font-normal font-['Space Grotesk']">Product Name</span>
-                <SortIcon />
+              <div className="flex flex-1 min-w-0 p-2 sm:p-3 md:p-4 items-center gap-1.5 sm:gap-2 md:gap-3 flex-shrink-0 border-b border-[#22353E] bg-[#1C242E]">
+                <span className="text-[#C4C4C4] text-[10px] sm:text-xs md:text-sm lg:text-base font-normal font-['Space Grotesk'] truncate">Product Name</span>
+                <div className="flex-shrink-0">
+                  <SortIcon />
+                </div>
               </div>
               
               {/* Cost Column Header */}
-              <div className="flex w-[84px] p-4 items-center gap-3 flex-shrink-0 border-b border-[#22353E] bg-[#1C242E]">
-                <span className="text-[#C4C4C4] text-base font-normal font-['Space Grotesk']">Cost</span>
-                <SortIcon />
+              <div className="flex w-16 sm:w-20 md:w-24 flex-shrink-0 p-2 sm:p-3 md:p-4 items-center gap-1.5 sm:gap-2 md:gap-3 border-b border-[#22353E] bg-[#1C242E]">
+                <span className="text-[#C4C4C4] text-[10px] sm:text-xs md:text-sm lg:text-base font-normal font-['Space Grotesk']">Cost</span>
+                <div className="flex-shrink-0">
+                  <SortIcon />
+                </div>
               </div>
               
               {/* Action Column Header */}
-              <div className="flex flex-1 p-4 items-center gap-3 rounded-tr-3xl border-b border-[#22353E] bg-[#1C242E]">
-                <span className="text-[#C4C4C4] text-base font-normal font-['Space Grotesk']">Action</span>
+              <div className="flex w-12 sm:w-14 md:w-16 flex-shrink-0 p-2 sm:p-3 md:p-4 items-center gap-1 sm:gap-2 md:gap-3 rounded-tr-2xl sm:rounded-tr-3xl border-b border-[#22353E] bg-[#1C242E]">
+                <span className="text-[#C4C4C4] text-[10px] sm:text-xs md:text-sm lg:text-base font-normal font-['Space Grotesk']">Action</span>
               </div>
             </div>
 
@@ -252,7 +256,7 @@ export default function Refunds() {
                 onClick={() => toggleItemSelection(item.id)}
               >
                 {/* Checkbox Column */}
-                <div className="flex h-[72px] p-4 justify-center items-center gap-2.5 border-r border-b border-l border-[#22353E]" onClick={(e) => e.stopPropagation()}>
+                <div className="flex w-10 sm:w-12 flex-shrink-0 min-h-[60px] sm:min-h-[68px] md:h-[72px] p-2 sm:p-3 md:p-4 justify-center items-center gap-1 sm:gap-2 border-r border-b border-l border-[#22353E]" onClick={(e) => e.stopPropagation()}>
                   <Checkbox
                     checked={item.selected}
                     onChange={() => toggleItemSelection(item.id)}
@@ -260,21 +264,21 @@ export default function Refunds() {
                 </div>
                 
                 {/* Product Name Column */}
-                <div className="flex w-[178px] p-4 items-center gap-2.5 border-b border-[#22353E]">
-                  <span className="text-[#F6F6F6] text-base font-normal font-['Space Grotesk'] flex-1">
+                <div className="flex flex-1 min-w-0 min-h-[60px] sm:min-h-[68px] md:h-[72px] p-2 sm:p-3 md:p-4 items-center gap-1.5 sm:gap-2 border-b border-[#22353E]">
+                  <span className="text-[#F6F6F6] text-[10px] sm:text-xs md:text-sm lg:text-base font-normal font-['Space Grotesk'] truncate" title={item.productName}>
                     {item.productName}
                   </span>
                 </div>
                 
                 {/* Cost Column */}
-                <div className="flex w-[85px] h-[72px] p-4 items-center gap-2.5 border-b border-[#22353E]">
-                  <span className="text-[#F6F6F6] text-base font-normal font-['Space Grotesk']">
+                <div className="flex w-16 sm:w-20 md:w-24 flex-shrink-0 min-h-[60px] sm:min-h-[68px] md:h-[72px] p-2 sm:p-3 md:p-4 items-center gap-1 sm:gap-2 border-b border-[#22353E]">
+                  <span className="text-[#F6F6F6] text-[10px] sm:text-xs md:text-sm lg:text-base font-normal font-['Space Grotesk']">
                     {item.cost}
                   </span>
                 </div>
                 
                 {/* Action Column */}
-                <div className="flex flex-1 h-[72px] p-4 justify-center items-center gap-2 border-r border-b border-l border-[#22353E]">
+                <div className="flex w-12 sm:w-14 md:w-16 flex-shrink-0 min-h-[60px] sm:min-h-[68px] md:h-[72px] p-2 sm:p-3 md:p-4 justify-center items-center gap-1 sm:gap-2 border-r border-b border-l border-[#22353E]">
                   <button onClick={(e) => handleActionClick(e, item)} className="flex items-center justify-center">
                     <DotsIcon />
                   </button>
